@@ -1,0 +1,99 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{currvita}
+\usepackage[english]{babel}
+\usepackage{microtype}
+\usepackage[left=3cm, right=3cm, top=3cm]{geometry} % Margins
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{cfr-lm}
+\usepackage{eso-pic}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage[overload]{textcase}
+\usepackage{regexpatch}
+\usepackage[unicode, hidelinks]{hyperref}
+\hbadness=10000 % Ignore «Underfull \hbox (badness 10000)» errors
+\newcommand*{\ac}[1]{\mbox{#1}}
+\pagenumbering{gobble} % No page numbers
+%% Labels right alignment %%
+\tracingxpatches
+\makeatletter
+\xpatchcmd{\cvlist}{##1\hfill}{\hfill##1}{}{\ddt}
+\makeatother
+%% Labels right alignment %%
+\tolerance=600
+
+\begin{document}
+\begin{cv}
+    {\fontsize{20pt}{16pt}\selectfont
+    {\bfseries\sc\huge{Antonio Díaz}}\\\\
+    {\mdseries\it\normalsize{Software developer}}\\
+    {\sc\mdseries\normalsize{TypeScript + Rust}}}
+    \vspace{2em}
+    \begin{cvlist}{Personal data}
+		\item[~]
+		Location: Madrid, Spain\\
+		{\href{mailto:hello@antoniodiaz.me?subject=Hello!&body=...}{\textit{hello@antoniodiaz.me}}}\\
+		{\href{https://antoniodiaz.me}{\textit{www.antoniodiaz.me}}}\\
+        {\href{https://www.git.antoniodiaz.me/antoniodcorrea}{\textit{www.git.antoniodiaz.me}}}
+    \end{cvlist}
+	\AddToShipoutPicture*
+	{\put(410,660){\includegraphics[height=5cm]{images/xpicture}}}
+	\begin{cvlist}{}
+		\item[] Software developer with background in project management in publishing and design.
+        Currently working in web platforms with TypeScript and Rust.\\
+    \end{cvlist}
+	\begin{cvlist}{Experience}
+    \item[2019--2022] \href{https://distillery.com}{\sc{Distillery}}: {\it{full stack developer}}, Los Angeles (remote).\\
+    Web application development: TypeScript, Node, React, Rust: \href{https://guidehuman.co}{\textit{www.guidehuman.co}}, \href{https://thrivemarket.com}{\textit{www.thrivemarket.com}}
+    \item[2017--2018] \href{https://astroshock.ru}{\sc{Astroshock}}: {\it{full stack developer}}, Moscow.\\
+		Web applications in Javascript and Python:  Backbone, React, Django-{\sc{rest}}, Webpack, {\sc{less}} and Babel: \href{https://u.university/}{\textit{www.u.university}}, \href{https://impossibleisinevitable.com}{\textit{www.impossibleisinevitable.com}},\\
+    \href{https://linii.group}{\textit{www.linii.group}}, \href{https://mosbrew.ru}{\textit{www.mosbrew.ru}}
+		\item[2015--2016] {\sc{Critik}}: {\it{Founder and developer}}, Madrid.\\
+		{\sc{php}} and Javascript. Database design and importing {\sc{rdf}} data from a {\sc{sparql}} Virtuoso server of the \href{https://www.bne.es/}{\sc{bne}} into {\sc{m}}y{\sc{sql}}.
+		\item[2012--2015] {\sc{D\'iaz \& Pons}}: {\it{founder  and editor}}, Madrid.\\
+		Responsible of the editorial strategy and contents, management of the projects and art direction. +20 publications.
+		\item[2009--2011] {\sc{freelance}}: {\it{project manager}}, Madrid\\
+		Project manager for public and private institutions as the \href{https://cgac.xunta.gal/}{Centro Gallego de Arte Contemporáneo —{\sc{cgac}}}— or \href{https://www.medialab-prado.es/}{Medialab-Prado}.
+		\item[2007--2008] {\sc{Art Notes}}: {\it{designer and writer}}, Santiago de Compostela.\\
+		Layout composer and writed on contemporary art magazine.
+    \end{cvlist}
+    \vspace{0.5em}
+    \clearpage
+    \begin{cvlist}{Software}
+        \item[Languages] {\href{https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf}{Javascript}}, {\href{https://www.typescriptlang.org/}{TypeScript}}, {\href{https://www.python.org/}{Python}}, {\href{https://www.rust-lang.org/}{Rust}}.
+        \item[Frameworks] {\href{https://expressjs.com}{Express.js}}, {\href{https://www.djangoproject.com}{Django}}, {\href{https://www.django-rest-framework.org/}{Django-{\sc{rest}}}}, {\href{https://angular.io/}{Angular}}.
+        \item[Libraries] {\href{https://reactjs.org/}{React}}, {\href{https://es.redux.js.org}{Redux}}.
+        \item[Databases] {\href{https://www.mysql.com/}{{\sc{m}}y{\sc{sql}}}}, {\href{https://www.postgresql.org}{{\sc{p}}ostgre{\sc{sql}}}}, {\href{https://www.w3.org/TR/rdf-sparql-query/}{{\sc{sparql}}}}.
+		    \item[Testing] {{\href{https://www.cypress.io/}{Cypress}}, {\href{https://jestjs.io}{Jest}}, {\href{https://airbnb.io/enzyme}{Enzyme}} (React), {\href{https://optimizely.com}{Optimizely}} ({\sc{a/b}} testing)}.
+		    \item[Text processors] {\href{https://www.latex-project.org/}{\LaTeX}} and Microsoft Word for publishing workflow.
+		    \item[Graphic design] {\href{https://www.figma.com}{Figma}}, {\href{https://www.sketchapp.com}{Sketch}}, {\href{https://www.adobe.com}{Adobe}} —InDesign, Illustrator, Photoshop—.
+		    \item[{\sc{os}}] Linux (Suse 10 \& 11, Ubuntu server 18.04—current), Mac {\sc{osx}} (10.05—current).
+        \item[Others] {\href{https://www.atlassian.com/software/jira}{Atlassian}}, {\href{https://www.jetbrains.com/youtrack}{YouTrack}}, {\href{https://aws.amazon.com/}{\sc{aws}}} (\sc{ec}2, Route 53, \sc{s}3).
+    \end{cvlist}
+    \vspace{0.5em}
+	\begin{cvlist}{Academic education}
+		\item[2007] Master of art, museology and contemporary critique, University of Santiago de Compostela.
+		\item[2001-2006] Bachelor’s degree in Art History, University of Santiago de Compostela.
+    \end{cvlist}
+    \vspace{0.5em}
+	\begin{cvlist}{Languages}
+		\item[Spanish] Native.
+		\item[English] Fluent oral and written.
+		\item[Russian] Intermediate level, oral and written.
+    \end{cvlist}
+    \vspace{0.5em}
+	\begin{cvlist}{Interests}
+		\item[-] Robotics applied to {\sc{r}}/{\sc{c}} sailplanes.
+		\item[-] History of design and typography.
+    \end{cvlist}
+    \vspace{3em}
+    \cvplace{}
+    \date{}
+    % \cvplace{Moscow}
+    \date{November 10\textsuperscript{th} 2022}
+\end{cv}
+\end{document}
+\endinput
+%%
+%% End of file `cvtest.tex'.

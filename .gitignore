@@ -1,0 +1,5 @@
+*latexindent*
+*.aux
+*.log
+*.out
+*.synctex.*
