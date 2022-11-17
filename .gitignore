@@ -2,4 +2,6 @@
 *.aux
 *.log
 *.out
+*.fls
 *.synctex.*
+*.latexmk.*

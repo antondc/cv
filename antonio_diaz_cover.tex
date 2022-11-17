@@ -1,0 +1,52 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{currvita}
+\usepackage[english]{babel}
+\usepackage{microtype}
+\usepackage[left=3cm, right=3cm, top=3cm]{geometry} % Margins
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{cfr-lm}
+\usepackage{eso-pic}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage[overload]{textcase}
+\usepackage{regexpatch}
+\usepackage[unicode, hidelinks]{hyperref}
+\newcommand*{\ac}[1]{\mbox{#1}}
+\pagenumbering{gobble} % No page numbers
+%% Labels right alignment %%
+\tracingxpatches
+\makeatletter
+\xpatchcmd{\cvlist}{##1\hfill}{\hfill##1}{}{\ddt}
+\makeatother
+%% Labels right alignment %%
+\tolerance=600
+
+\begin{document}
+    \begin{cv}
+    {\fontsize{20pt}{16pt}\selectfont
+    {\bfseries\sc\huge{Antonio Díaz}}\\\\
+    {\mdseries\it\normalsize{Software developer}}\\
+    {\sc\mdseries\normalsize{TypeScript + Rust}}}
+        \vspace{4em}
+        Software developer currently focused on Rust, with 5+ years of experience {\mbox{primarily}} on frontend using TypeScript (React/Angular) and on backend with NodeJS and Python (Django).\\
+
+        On 2015 I developed Critik, an online platform for literary enthusiasts created for Eidos Editorial, migrating {\sc{rdf}} data from a Virtuoso server using {\sc{sparql}} into our own {\sc{m}}y{\sc{sql}} database. Since then, I have been working on multiple platforms, as the online shop based in Los Angeles \href{https://www.thrivemarket.com}{\textit{Thrive Market}} or the site for the design studio \href{https://linii.group}{\textit{Linii}}, among others.\\
+
+        My education is related to art and design, focusing my attention on art and digital technologies. I worked as designer and editor on the contemporary art magazine \href{https://www.revistasculturales.com/revistas/119/art-notes/numeros/}{\textit{\mbox{Art Notes}}} and with several institutions as project coordinator, as \href{https://cgac.xunta.gal/}{\sc{cgac}} or Medialab-Prado —currently \href{https://www.medialab-matadero.es/}{\it{Matadero-Medialab}}—. On 2012 I co-founded \href{https://www.antoniodiaz.me/diazpons-catalog-2016.pdf}{\it{\mbox{Díaz \& Pons}}}, a publishing house focused on digital and printed editions of non-fiction, where we edited high quality non-fiction books on art and social sciences.\\
+
+        As a former publisher, I focus on readable and well-structured code, but also on methodologies that allow fluent and flexible procedures with complex teams while maintaining on-time delivery. In this regard I am currently interested on strongly typed languages such as Rust and design approaches that involve technical and non-technical members of the team such as Domain Driven Design.\\
+
+        I am also interested in history of art and typography as well as robotics applied to R/C sailplanes.\\
+
+        You can find more information at my site {\href{https://antoniodiaz.me}{\textit{www.antoniodiaz.me}}}, in my GitLab at {\href{https://www.git.antoniodiaz.me/antoniodcorrea/}{\textit{www.git.antoniodiaz.me}}}, or just writing me to {\href{mailto:hello@antoniodiaz.me?subject=Hello!&body=...}{\textit{hello@antoniodiaz.me}}}.\\\\\\\\
+
+        Antonio Díaz
+
+        \cvplace{}
+        \date{November 10\textsuperscript{th} 2022}
+    \end{cv}
+\end{document}
+\endinput
+%%
+%% End of file `cvtest.tex'.
