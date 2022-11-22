@@ -4,4 +4,4 @@
 *.out
 *.fls
 *.synctex.*
-*.latexmk.*
+*latexmk
