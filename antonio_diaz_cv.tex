@@ -11,6 +11,7 @@
 \usepackage{xcolor}
 \usepackage[overload]{textcase}
 \usepackage{regexpatch}
+  \usepackage{enumitem}
 \usepackage[unicode, hidelinks]{hyperref}
 \hbadness=10000 % Ignore «Underfull \hbox (badness 10000)» errors
 \newcommand*{\ac}[1]{\mbox{#1}}
@@ -23,6 +24,13 @@
 \makeatother
 %% Labels right alignment %%
 \tolerance=600
+
+% -----------------------------------------
+% START Lists style
+\newlist{customlist}{enumerate}{1}
+\setlist[customlist,1]{label={·}, leftmargin=0.3cm, labelsep=0.1cm}
+% END Lists style
+% -----------------------------------------
 
 \begin{document}
 \begin{cv}
@@ -38,57 +46,65 @@
     {\href{mailto:hello@antoniodiaz.me?subject=Hello!&body=...}{\textit{hello@antoniodiaz.me}}}\\
     {\href{https://antoniodiaz.me}{\textit{www.antoniodiaz.me}}}\\
     {\href{https://www.git.antoniodiaz.me/antoniodcorrea}{\textit{www.git.antoniodiaz.me}}}\\\\
-    Software developer with background in project management, {\mbox{currently}} working in web platforms with \href{https://www.typescriptlang.org}{TypeScript} and \href{https://www.rust-lang.org/}{Rust}\\
+    Software developer with background in project management, {\mbox{currently}} working in web platforms with \href{https://www.typescriptlang.org}{TypeScript} and \href{https://www.rust-lang.org/}{Rust}.\\
 
   \end{cvlist}
   \AddToShipoutPicture*
   {\put(430,660){\includegraphics[height=5cm]{images/antoniodiaz}}}
   \begin{cvlist}{Experience}
     \item[2023--] {\href{https://www.telefonica.es/es/}{\sc{Telefónica}}}  {\big|} \href{https://full-on-net.com}{\sc{fon}}: {\it{full stack developer}}, Madrid.\\
-    Streaming web application development.
-    \item[] {\href{https://o2.de}{\textit{www.o2.de}}}, {\href{https://tv.movistar.co}{\textit{www.tv.movistar.co}}}.\\
-    \textit{Role}: full stack developer.\\
-    \textit{Stack}: React, \href{https://nodejs.org/en/}{NodeJS}, {\href{https://graphql.org/}{{\sc{g}}raph{\sc{ql}}}}, streaming ({\sc{hls}}/{\sc{dash}}), \href{https://developers.google.com/widevine/open-source/shaka-player}{Shaka}.\\
-    \textit{Responsibilities}: development and maintenance of multilingual web client and backend \href{https://bff-patterns.com/}{\sc{bff}} \mbox{applications} for German and \textsc{latam} markets. Also contributed to external libraries used by our team, such as Google's \href{https://github.com/shaka-project/shaka-player}{\textit{Shaka-player}}.
-    \item[2019--2022] \href{https://distillery.com}{\sc{Distillery}}: {\it{full stack developer}}. {Moscow (\textsc{ru})}.\\
-    Web application development: \href{https://www.typescriptlang.org}{TypeScript}, \href{https://nodejs.org/en/}{NodeJS}, React, \href{https://www.rust-lang.org/}{Rust}.
-    \item[] \href{https://ucell.uz}{\textit{www.ucell.uz}}\\
-    \textit{Role}: backend developer.\\
-    \textit{Stack}: \href{https://nodejs.org/en/}{NodeJS}, \href{https://jestjs.io}{Jest}, \href{https://expressjs.com/}{Express}, \href{https://www.rust-lang.org/}{Rust}, \href{https://rocket.rs/}{Rocket}.\\
-    \textit{Responsibilities}: responsible of team designing and evaluating two different prototypes —\href{https://nodejs.org/en/}{NodeJS} vs \href{https://www.rust-lang.org/}{Rust}— for an \textsc{api rest} serving data to both web and mobile clients.
-    \item[] \href{https://thrivemarket.com}{\textit{www.thrivemarket.com}} - Los Angeles (\textsc{us})\\
-    \textit{Role}: frontend developer.\\
-    \textit{Stack}: \href{https://www.typescriptlang.org}{TypeScript}, React, \href{https://react-query-v3.tanstack.com/}{React-Query}, \href{https://www.framer.com/motion/}{Framer Motion}, \href{https://www.cypress.io/}{Cypress}.\\
-    \textit{Responsibilities}: migrate to NextJS from a rigid codebase lacking structure; implemented modules related to payment system with \href{https://stripe.com}{Stripe}; cleanup, sunset and replacement of several legacy projects; syncronization with teams across several timezones ({\textsc{us}} - {\textsc{cee/cis}}).
-    \item[] \href{https://guidehuman.co}{\textit{www.guidehuman.co}} - Boston (\textsc{us})\\
-    \textit{Role}: frontend developer.\\
-    \textit{Stack}: \href{https://www.typescriptlang.org}{TypeScript}, React, Redux, \href{https://redux-saga.js.org}{Redux Saga}.\\
-    \textit{Responsibilities}: implemented new \textsc{ui}s; developed the advanced search client; maintenance and refactor of legacy code.
+    Streaming web application development.\\
+    {\href{https://o2.de}{\textit{www.o2.de}}}, {\href{https://tv.movistar.co}{\textit{www.tv.movistar.co}}}.\\
+    \textit{Stack}: React, \href{https://nodejs.org/en/}{Node.js}, {\href{https://graphql.org/}{{\sc{g}}raph{\sc{ql}}}}, streaming ({\sc{hls}}/{\sc{dash}}).\\
+    \textit{Responsibilities}:
+    \begin{customlist}[topsep={-4pt},partopsep={0pt}, noitemsep]
+      \item Development and maintenance of multilingual web client and backend \href{https://bff-patterns.com/}{\sc{bff}} \mbox{applications} for European and \textsc{latam} markets with 800.000{\plus} concurrent reproductions.
+      \item Contributed to libraries, including Google's \href{https://github.com/shaka-project/shaka-player}{\textit{Shaka-player}}.
+      \item Refactored several functionalities and their caching systems to improve latency, helping other teams working with different devices replicate our success in their implementations.
+      \item Introduced types to a \href{https://nodejs.org/en/}{Node.js} codebase (\href{https://www.typescriptlang.org}{TypeScript}) as well as unit testing best practices.
+    \end{customlist}
 
-    \item[2018--2019] \href{https://urligram.com}{\sc{Urligram}}: side project, Moscow (\textsc{ru}).\\
+    \item[2019--2022] {\href{https://thrivemarket.com/}{\sc{Thrive Market}}}  {\big|} \href{https://distillery.com}{\sc{Distillery}}: {\it{full stack developer}}.\\{Moscow (\textsc{ru})} - Los Angeles (\textsc{us}).\\
+    \href{https://thrivemarket.com}{\textit{www.thrivemarket.com}}\\
+    Web application development: \href{https://www.typescriptlang.org}{TypeScript}, \href{https://nodejs.org/en/}{Node.js}, React, \href{https://www.rust-lang.org/}{Rust}.\\
+    \textit{Stack}: \href{https://www.typescriptlang.org}{TypeScript}, React, \href{https://react-query-v3.tanstack.com/}{React-Query}, \href{https://www.framer.com/motion/}{Framer Motion}, \href{https://www.cypress.io/}{Cypress}.\\
+    \textit{Responsibilities}:
+
+    \begin{customlist}[topsep={-4pt},partopsep={0pt}, noitemsep]
+      \item Synchronization with cross-functional teams across different time zones ({\textsc{us}} - {\textsc{cee/cis}}).
+      \item Refactored  web client to \href{https://nextjs.org/}{Next.js} by writing full suite of {\textsc{e}}2{\textsc{e}} tests with \href{https://www.cypress.io/}{Cypress} beforehand to support the one-and-a-half-year migration process.
+      \item Implemented new modules related to different payment systems.
+      \item Managed the cleanup, shutdown, and replacement of several legacy sites and endpoints, ensuring that all related infrastructure and redirections were addressed.\\
+    \end{customlist}
+
+    \item[2018--2019] \href{https://urligram.com}{\sc{Urligram}}: side project, {\it{founder and developer}}, Moscow (\textsc{ru}).\\
     \href{https://urligram.com}{\textit{www.urligram.com}}.\\
-    \textit{Role}: Idea, full stack developer, \textsc{ux} design.\\
-    \textit{Stack}: React, \href{https://nodejs.org/en/}{NodeJS}, \href{https://www.postgresql.org/}{PostgreSQL}.\\
-    \textit{Responsibilities}: Frameworkless development of web client, browser extensions (Chrome \& Firefox), \textsc{rest api}, as well as database schema design and implementation.
+    \textit{Stack}: React, \href{https://nodejs.org/en/}{Node.js}, \href{https://www.postgresql.org/}{PostgreSQL}.\\
+    \textit{Responsibilities}:
+    \begin{customlist}[topsep={-4pt},partopsep={0pt}, noitemsep]
+      \item {\textsc{ux}} design (\href{https://www.sketch.com/}{Sketch}\plus \href{https://www.figma.com/}{Figma}) using Atomic Design methodology.
+      \item Developed a frameworkless web client with {\textsc{ssr}}, achieving a lightweight and high-performance solution.
+      \item Designed and implemented browser extensions for both Chrome and Firefox, broadening platform accessibility.
+      \item Built a \textsc{rest api} using {\href{https://martinfowler.com/bliki/DomainDrivenDesign.html}{\textsc{ddd}}} to maintain cohesive business logic while decoupling concerns with a hexagonal architecture.
+      \item Architected and executed comprehensive database schema design and implementation with \href{https://www.postgresql.org/}{PostgreSQL}.
+    \end{customlist}
 
     \item[2017--2018] \href{https://astroshock.ru}{\sc{Astroshock}}: {\it{full stack developer}}, Moscow (\textsc{ru}).\\
-    \textit{Role}: Full stack developer\\
     \textit{Stack}: React, \href{https://backbonejs.org/}{Backbone}, \href{https://www.djangoproject.com/}{Django} (Python).\\
     \textit{Responsibilities}: Development of web client, back office for content management and \textsc{api}.\\
     \href{https://mosbrew.ru}{\textit{www.mosbrew.ru}}, \href{https://u.university/}{\textit{www.u.university}}, \href{https://linii.group}{\textit{www.linii.group}}
 
     \item[2015--2016] {\sc{Critik}}: {\it{Founder and developer}}, Madrid (\textsc{es}).\\
-    \textit{Role}: product manager and backend developer.\\
     \textit{Stack}: \href{https://www.w3.org/TR/rdf-sparql-query/}{\sc{sparql}}, \href{https://www.mysql.com/}{{\sc{m}}y{\sc{sql}}}.\\
     \textit{Responsibilities}: project management; importing {\sc{rdf}} data from a {\sc{sparql}} Virtuoso server of the \href{https://www.bne.es/}{\sc{bne}} into \href{https://www.mysql.com/}{{\sc{m}}y{\sc{sql}}}.
     \item[2012--2015] {\sc{Díaz \& Pons}}: {\it{founder  and editor}}, Madrid (\textsc{es}).\\
     Responsible of the editorial strategy and contents, management of the projects and art direction. 20{\plus}  publications.
     \item[2007--2011] {\sc{freelance}}: {\it{project manager}}, Madrid (\textsc{es}).\\
-    Project manager at \href{https://cgac.xunta.gal/}{{\sc{cgac}}} and \href{https://www.medialab-prado.es/}{Medialab-Prado}.
+    Project manager at \href{https://cgac.xunta.gal/}{{\sc{cgac}}} and {Medialab-Prado} (currently \href{https://www.medialab-matadero.es/}{Matadero-Medialab}).
   \end{cvlist}
   \begin{cvlist}{Academic education}
-    \item[2007] Master's Degree in Cultural Management (\href{https://cgac.xunta.gal/}{{\sc{cgac}}}\plus\href{https://www.usc.gal}{{\sc{usc}}}) .
-    \item[2001-2006] Bachelor’s degree in Art History, \href{https://www.usc.gal}{{\sc{usc}}}.
+    \item[2007] Master's Degree in Project Management (\href{https://cgac.xunta.gal/}{{\sc{cgac}}}\plus\href{https://www.usc.gal}{{\sc{usc}}}).
+    \item[2001-2006] Bachelor of Arts in History, \href{https://www.usc.gal}{{\sc{usc}}}.
   \end{cvlist}
   \begin{cvlist}{Languages}
     \item[Spanish] Native.
@@ -96,7 +112,7 @@
     \item[Russian] Intermediate level, oral and written.
   \end{cvlist}
   \cvplace{}
-  \date{February 13\textsuperscript{th} 2025}
+  \date{March 13\textsuperscript{th} 2025}
 \end{cv}
 \end{document}
 \endinput
