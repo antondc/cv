@@ -31,7 +31,7 @@ tlmgr install \
 From the project root:
 
 ```bash
-latexmk -pdf main.tex
+latexmk -pdf cv.tex
 ```
 
 To clean build artifacts:

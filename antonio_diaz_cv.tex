@@ -11,7 +11,9 @@
 \usepackage{xcolor}
 \usepackage[overload]{textcase}
 \usepackage{regexpatch}
-  \usepackage{enumitem}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\newcommand{\gh}{{\scalebox{0.8}{\faGithub}}}
 \usepackage[unicode, hidelinks]{hyperref}
 \hbadness=10000 % Ignore «Underfull \hbox (badness 10000)» errors
 \newcommand*{\ac}[1]{\mbox{#1}}
@@ -45,15 +47,15 @@
     Location: Madrid, Spain.\\
     {\href{mailto:hello@antoniodiaz.me?subject=Hello!&body=...}{\textit{hello@antoniodiaz.me}}}\\
     {\href{https://antoniodiaz.me}{\textit{www.antoniodiaz.me}}}\\
+    {\href{https://www.github.com/antondc}{\textit{www.github.com}}}\\
     {\href{https://www.git.antoniodiaz.me/antoniodcorrea}{\textit{www.git.antoniodiaz.me}}}\\\\
-    Software developer with background in project management, {\mbox{currently}} working in web platforms with \href{https://www.typescriptlang.org}{TypeScript} and \href{https://www.rust-lang.org/}{Rust}.\\
-
+    Senior software developer with a background in project management, building large-scale web platforms using TypeScript, Go, and Rust.
   \end{cvlist}
   \AddToShipoutPicture*
   {\put(430,660){\includegraphics[height=5cm]{images/antoniodiaz}}}
   \begin{cvlist}{Experience}
     \item[2023--] {\href{https://www.telefonica.es/es/}{\sc{Telefónica}}}  {\big|} \href{https://full-on-net.com}{\sc{fon}}: {\it{full stack developer}}, Madrid.\\
-    {\href{https://movistarplus.es}{\textit{www.movistarplus.es}}}: Streaming web application development.\\
+    {\href{https://movistarplus.es}{\textit{www.movistarplus.es}}}: Streaming near real-time web application development.\\
     \textit{Stack}: React, \href{https://nodejs.org/en/}{Node.js}, {\href{https://graphql.org/}{{\sc{g}}raph{\sc{ql}}}}, {\sc{hls}}/{\sc{dash}}.\
     \begin{customlist}[topsep={-4pt},partopsep={0pt}, noitemsep]
       \item Development and maintenance of multilingual web client and backend \href{https://bff-patterns.com/}{\sc{bff}} \mbox{applications} for European and American markets with 800{\sc{k}}{\plus} concurrent reproductions.
@@ -69,20 +71,20 @@
 
     \begin{customlist}[topsep={-4pt},partopsep={0pt}, noitemsep]
       \item Synchronization with cross-functional teams across different time zones ({\textsc{us}} - {\textsc{cee/cis}}).
-      \item Refactored  web client to \href{https://nextjs.org/}{Next.js} by writing full suite of {\textsc{e}}2{\textsc{e}} tests with \href{https://www.cypress.io/}{Cypress} beforehand to support the one-and-a-half-year migration process.
+      \item Refactored  web client to \href{https://nextjs.org/}{Next.js} by writing full suite of {\textsc{e}}2{\textsc{e}} tests with \href{https://www.cypress.io/}{Cypress} beforehand to support the 18-month migration process.
       \item Implemented new modules related to different payment systems.
       \item Managed the cleanup, shutdown, and replacement of several legacy sites and endpoints, ensuring that all related infrastructure and redirections were addressed.\\
     \end{customlist}
 
     \item[2019] \href{https://urligram.com}{\sc{Urligram}}: side project, Moscow (\textsc{ru}).\\
     \href{https://urligram.com}{\textit{www.urligram.com}}.\\
-    \textit{Stack}: React, \href{https://nodejs.org/en/}{Node.js}, \href{https://www.postgresql.org/}{PostgreSQL}.\
+    \textit{Stack}: React, \href{https://nodejs.org/en/}{Node.js}, \href{https://www.postgresql.org/}{{\sc{p}}ostgre{\sc{sql}}}.\
     \begin{customlist}[topsep={-4pt},partopsep={0pt}, noitemsep]
       \item {\textsc{ux}} design (\href{https://www.sketch.com/}{Sketch}\plus \href{https://www.figma.com/}{Figma}) using Atomic Design methodology.
       \item Developed a frameworkless web client with {\textsc{ssr}}, achieving a lightweight and high-performance solution.
       \item Designed and implemented browser extensions for both Chrome and Firefox, broadening platform accessibility.
       \item Built a \textsc{rest api} using {\href{https://martinfowler.com/bliki/DomainDrivenDesign.html}{\textsc{ddd}}} to maintain cohesive business logic while decoupling concerns with a hexagonal architecture.
-      \item Architected and executed comprehensive database schema design and implementation with \href{https://www.postgresql.org/}{PostgreSQL}.
+      \item Architected and executed comprehensive database schema design and implementation with \href{https://www.postgresql.org/}{{\sc{p}}ostgre{\sc{sql}}}.
     \end{customlist}
 
     \item[2017--2019] \href{https://astroshock.ru}{\sc{Astroshock}}: {\it{full stack developer}}, Moscow (\textsc{ru}).\\
@@ -102,8 +104,21 @@
   \end{cvlist}
   \begin{cvlist}{Languages}
     \item[Spanish] Native.
-    \item[English] Fluent oral and written.
-    \item[Russian] Intermediate level, oral and written.
+    \item[English] Fluent (spoken and written).
+    \item[Russian] Intermediate (spoken and written).
+  \end{cvlist}
+  \begin{cvlist}{Technical skills}
+    \item[Languages] \href{https://www.typescriptlang.org}{TypeScript}, JavaScript, \href{https://www.rust-lang.org/}{Rust}, \href{https://go.dev/}{Go}, {\sc{sql}}.
+    \item[Frontend] React, \href{https://nextjs.org/}{Next.js}, {\href{https://graphql.org/}{{\sc{g}}raph{\sc{ql}}}}, \href{https://www.cypress.io/}{Cypress}.
+    \item[Backend] \href{https://nodejs.org/en/}{Node.js}, \href{https://www.postgresql.org/}{{\sc{p}}ostgre{\sc{sql}}}.
+    \item[Architecture] {\sc{ddd}}, Hexagonal, {\sc{rest}}.
+    \item[Tools] Git, Docker, {\sc{ci/cd}}.
+  \end{cvlist}
+  \begin{cvlist}{Selected Projects}
+      \item[\sc{dsa}] Data structures and algorithms in Go, Rust and TypeScript \href{https://github.com/antondc/data-structures-and-algorithms}{\gh}.
+      \item[\href{https://urligram.com}{Urligram}] Repositories for \href{https://urligram.com}{\it{www.urligram.com}}: web client \href{https://github.com/antondc/urligram-frontend}{\gh}, {\sc{api}} \href{https://github.com/antondc/urligram-api}{\gh}, Chrome extension \href{https://github.com/antondc/urligram-extension-chrome}{\gh}, Firefox extension \href{https://github.com/antondc/urligram-extension-firefox}{\gh}.
+      \item[Rust \sc{api}] Rust {\sc{rest api}} starter kit \href{https://github.com/antondc/rust-api-rest-starter-kit}{\gh}.
+      \item[Transducers] Code for functional programming series at \href{https://www.antoniodiaz.me/en/blog/functional-javascript-transducers-14}{\it{www.antoniodiaz.me}} \href{https://github.com/antondc/blog-functional-programming-suporting-code}{\gh}.
   \end{cvlist}
   \cvplace{}
   \date{\today}
