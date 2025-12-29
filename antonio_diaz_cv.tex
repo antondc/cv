@@ -21,8 +21,25 @@
 \pagenumbering{gobble} % No page numbers
 %% Labels right alignment %%
 \tracingxpatches
+
 \makeatletter
 \xpatchcmd{\cvlist}{##1\hfill}{\hfill##1}{}{\ddt}
+
+% Tighten spacing inside currvita cvlist
+\renewcommand{\cvlist}[2]{%
+    \begin{list}{}{%
+        \setlength{\labelwidth}{\cvlabelwidth}%
+        \setlength{\leftmargin}{\cvlabelwidth}%
+        \addtolength{\leftmargin}{\cvlabelsep}%
+        \setlength{\itemindent}{0pt}%
+        \setlength{\labelsep}{\cvlabelsep}%
+        \setlength{\parsep}{0pt}%
+        \setlength{\itemsep}{0.3em}% <-- space between \item entries
+        \setlength{\topsep}{0.5em}%  <-- space above/below the list
+    }%
+    \item[\textbf{#1}]#2%
+}
+
 \makeatother
 %% Labels right alignment %%
 \tolerance=600
@@ -48,15 +65,14 @@
     {\href{mailto:hello@antoniodiaz.me?subject=Hello!&body=...}{\textit{hello@antoniodiaz.me}}}\\
     {\href{https://antoniodiaz.me}{\textit{www.antoniodiaz.me}}}\\
     {\href{https://www.github.com/antondc}{\textit{www.github.com}}}\\
-    {\href{https://www.git.antoniodiaz.me/antoniodcorrea}{\textit{www.git.antoniodiaz.me}}}\\\\
     Senior software developer with a background in project management, building large-scale web platforms using TypeScript, Go, and Rust.
   \end{cvlist}
   \AddToShipoutPicture*
   {\put(430,660){\includegraphics[height=5cm]{images/antoniodiaz}}}
   \begin{cvlist}{Experience}
     \item[2023--] {\href{https://www.telefonica.es/es/}{\sc{Telefónica}}}  {\big|} \href{https://full-on-net.com}{\sc{fon}}: {\it{full stack developer}}, Madrid.\\
-    {\href{https://movistarplus.es}{\textit{www.movistarplus.es}}}: Streaming near real-time web application development.\\
-    \textit{Stack}: React, \href{https://nodejs.org/en/}{Node.js}, {\href{https://graphql.org/}{{\sc{g}}raph{\sc{ql}}}}, {\sc{hls}}/{\sc{dash}}.\
+    {\href{https://movistarplus.es}{\textit{www.movistarplus.es}}}: Streaming near real-time web application.\\
+    \textit{Stack}: React, \href{https://www.typescriptlang.org}{TypeScript}, \href{https://nodejs.org/en/}{Node.js}, {\href{https://graphql.org/}{{\sc{g}}raph{\sc{ql}}}}, {\sc{hls}}/{\sc{dash}}.\
     \begin{customlist}[topsep={-4pt},partopsep={0pt}, noitemsep]
       \item Development and maintenance of multilingual web client and backend \href{https://bff-patterns.com/}{\sc{bff}} \mbox{applications} for European and American markets with 800{\sc{k}}{\plus} concurrent reproductions.
       \item Contributed to libraries, including Google's \href{https://github.com/shaka-project/shaka-player}{\textit{Shaka-player}}.
@@ -65,19 +81,18 @@
     \end{customlist}
 
     \item[2019--2022] {\href{https://thrivemarket.com/}{\sc{Thrive Market}}}  {\big|} \href{https://distillery.com}{\sc{Distillery}}: {\it{full stack developer}}.\\{Moscow (\textsc{ru})} - Los Angeles (\textsc{us}).\\
-    \href{https://thrivemarket.com}{\textit{www.thrivemarket.com}}\\
-    Web application development: \href{https://www.typescriptlang.org}{TypeScript}, \href{https://nodejs.org/en/}{Node.js}, React, \href{https://www.rust-lang.org/}{Rust}.\\
-    \textit{Stack}: \href{https://www.typescriptlang.org}{TypeScript}, React, \href{https://react-query-v3.tanstack.com/}{React-Query}, \href{https://www.framer.com/motion/}{Framer Motion}, \href{https://www.cypress.io/}{Cypress}.\
+    \href{https://thrivemarket.com}{\textit{www.thrivemarket.com}}: e-commerce competing with Amazon Fresh in {\sc{us}} market.\\
+    \textit{Stack}: \href{https://www.typescriptlang.org}{TypeScript}, React, \href{https://www.cypress.io/}{Cypress}, \href{https://www.rust-lang.org/}{Rust}.
 
     \begin{customlist}[topsep={-4pt},partopsep={0pt}, noitemsep]
       \item Synchronization with cross-functional teams across different time zones ({\textsc{us}} - {\textsc{cee/cis}}).
       \item Refactored  web client to \href{https://nextjs.org/}{Next.js} by writing full suite of {\textsc{e}}2{\textsc{e}} tests with \href{https://www.cypress.io/}{Cypress} beforehand to support the 18-month migration process.
       \item Implemented new modules related to different payment systems.
-      \item Managed the cleanup, shutdown, and replacement of several legacy sites and endpoints, ensuring that all related infrastructure and redirections were addressed.\\
+      \item Managed the cleanup, shutdown, and replacement of several legacy sites and endpoints, ensuring that all related infrastructure and redirections were addressed.
     \end{customlist}
 
     \item[2019] \href{https://urligram.com}{\sc{Urligram}}: side project, Moscow (\textsc{ru}).\\
-    \href{https://urligram.com}{\textit{www.urligram.com}}.\\
+    \href{https://urligram.com}{\textit{www.urligram.com}}: social bookmarking application.\\
     \textit{Stack}: React, \href{https://nodejs.org/en/}{Node.js}, \href{https://www.postgresql.org/}{{\sc{p}}ostgre{\sc{sql}}}.\
     \begin{customlist}[topsep={-4pt},partopsep={0pt}, noitemsep]
       \item {\textsc{ux}} design (\href{https://www.sketch.com/}{Sketch}\plus \href{https://www.figma.com/}{Figma}) using Atomic Design methodology.
@@ -94,7 +109,7 @@
     \item[2015--2016] {\sc{Critik}}: {\it{Founder and developer}}, Madrid (\textsc{es}).\\
     \textit{Stack}: \href{https://www.w3.org/TR/rdf-sparql-query/}{\sc{sparql}}, \href{https://www.mysql.com/}{{\sc{m}}y{\sc{sql}}}.\ project management; importing {\sc{rdf}} data from a {\sc{sparql}} Virtuoso server of the \href{https://www.bne.es/}{\sc{bne}} into \href{https://www.mysql.com/}{{\sc{m}}y{\sc{sql}}}.
     \item[2012--2015] \href{https://www.diazpons.es}{\sc{Díaz \& Pons}}: {\it{founder  and editor}}, Madrid (\textsc{es}).\\
-    Responsible of the editorial strategy and contents, management of the projects and art direction. 20{\plus}  publications.
+    Responsible of the editorial strategy and contents, management of the projects and art direction. 20{\plus}  publications {\href{https://www.diazpons.es}{\it{www.diazpons.es}}}.
     \item[2007--2011] {\sc{freelance}}: {\it{project manager}}, Madrid (\textsc{es}).\\
     Project manager at \href{https://cgac.xunta.gal/}{{\sc{cgac}}} and {Medialab-Prado} (currently \href{https://www.medialab-matadero.es/}{Matadero-Medialab}).
   \end{cvlist}
@@ -116,9 +131,9 @@
   \end{cvlist}
   \begin{cvlist}{Selected Projects}
       \item[\sc{dsa}] Data structures and algorithms in Go, Rust and TypeScript \href{https://github.com/antondc/data-structures-and-algorithms}{\gh}.
-      \item[\href{https://urligram.com}{Urligram}] Repositories for \href{https://urligram.com}{\it{www.urligram.com}}: web client \href{https://github.com/antondc/urligram-frontend}{\gh}, {\sc{api}} \href{https://github.com/antondc/urligram-api}{\gh}, Chrome extension \href{https://github.com/antondc/urligram-extension-chrome}{\gh}, Firefox extension \href{https://github.com/antondc/urligram-extension-firefox}{\gh}.
-      \item[Rust \sc{api}] Rust {\sc{rest api}} starter kit \href{https://github.com/antondc/rust-api-rest-starter-kit}{\gh}.
+      \item[Urligram] Web client, {\sc{api}} and browser extensions for {\it{www.urligram.com}} \href{https://github.com/antondc?tab=repositories&q=topic%3Aurligram}{\gh}.
       \item[Transducers] Code for functional programming series at \href{https://www.antoniodiaz.me/en/blog/functional-javascript-transducers-14}{\it{www.antoniodiaz.me}} \href{https://github.com/antondc/blog-functional-programming-suporting-code}{\gh}.
+      \item[Hexagonal Rust] Rust {\sc{api rest}} starter kit using hexagonal architecture \href{https://github.com/antondc/rust-api-rest-starter-kit}{\gh}.
   \end{cvlist}
   \cvplace{}
   \date{\today}
