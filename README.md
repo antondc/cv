@@ -1,12 +1,10 @@
-# LaTeX Project
+# CV Antonio Díaz Correa
 
 CV composed with LaTeX
-
 
 ## Required TeX Live packages
 
 The following packages are required beyond the TeX Live core collections.
-
 
 ### Install command
 
