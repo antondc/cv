@@ -21,7 +21,9 @@ tlmgr install \
   xkeyval \
   regexpatch \
   babel \
-  epstopdf-base
+  epstopdf-base \
+  fontawesome5 \
+  microtype
 ```
 
 ## Build instructions
