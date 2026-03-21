@@ -5,3 +5,4 @@
 *.fls
 *.synctex.*
 *latexmk
+.*aude
