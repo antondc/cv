@@ -1,8 +1,8 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 \usepackage{currvita}
 \usepackage[english]{babel}
 \usepackage{microtype}
-\usepackage[left=2.5cm, right=2.5cm, top=2.2cm, bottom=2.2cm]{geometry} % Margins. Ideally left=3cm, right=3cm, top=2.5cm, bottom=2.5cm, adjusted to avoid new page breaks.
+\usepackage[left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry} % Margins
 \usepackage{graphicx}
 \usepackage[T1]{fontenc}
 \usepackage{cfr-lm}
@@ -43,6 +43,7 @@
 \makeatother
 %% Labels right alignment %%
 \tolerance=600
+\linespread{1.08}
 
 % -----------------------------------------
 % START Lists style
@@ -53,7 +54,7 @@
 
 \begin{document}
 \begin{cv}
-  {\fontsize{20pt}{16pt}\selectfont
+  {\fontsize{18pt}{22pt}\selectfont
   {\bfseries\sc\huge{Antonio Díaz}}\\\\
   {\mdseries\it\normalsize{Software developer}}\\
   {\sc\mdseries\normalsize{TypeScript + Rust + Go}}
@@ -104,23 +105,27 @@
     \item[2007--2011] {\sc{freelance}}: {\it{project manager}}, Madrid (\textsc{es}).\\
     Project manager at \href{https://cgac.xunta.gal/}{{\sc{cgac}}} and {Medialab-Prado} (currently \href{https://www.medialab-matadero.es/}{Matadero-Medialab}).
   \end{cvlist}
+  \vspace{0.4em}
   \begin{cvlist}{Education}
     \item[2007] Master's Degree in Project Management (\href{https://cgac.xunta.gal/}{{\sc{cgac}}}\plus\href{https://www.usc.gal}{{\sc{usc}}}).
     \item[2001-2006] Bachelor of Arts in Art History, \href{https://www.usc.gal}{{\sc{usc}}}.
   \end{cvlist}
+  \vspace{0.4em}
   \begin{cvlist}{Languages}
     \item[Spanish] Native.
     \item[English] Fluent (spoken and written).
     \item[Russian] Intermediate (spoken and written).
   \end{cvlist}
+  \vspace{0.4em}
   \begin{cvlist}{Skills}
     \item[Languages] \href{https://www.typescriptlang.org}{TypeScript}, JavaScript, \href{https://www.rust-lang.org/}{Rust}, \href{https://go.dev/}{Go}, {\sc{sql}}.
     \item[Frontend] React, \href{https://nextjs.org/}{Next.js}, {\href{https://graphql.org/}{{\sc{g}}raph{\sc{ql}}}}.
     \item[Testing] Jest, \href{https://www.cypress.io/}{Cypress}.
     \item[Backend] \href{https://nodejs.org/en/}{Node.js}, \href{https://www.postgresql.org/}{{\sc{p}}ostgre{\sc{sql}}}.
     \item[Architecture] {\sc{ddd}}, Hexagonal, {\sc{rest}}.
-    \item[Tools] Git, GitLab, Docker, {\sc{ci/cd}}.
+    \item[Tools] Git, GitLab, Github ({\sc{ci/cd}}), Docker.
   \end{cvlist}
+  \vspace{0.4em}
   \begin{cvlist}{Projects}
     \item[\sc{dsa}] Data structures and algorithms in TypeScript, Rust and Go \href{https://github.com/antondc/data-structures-and-algorithms}{\gh}.
     \item[Urligram] Web client, {\sc{api}} and browser extensions for {\it{www.urligram.com}} \href{https://github.com/antondc?tab=repositories&q=topic%3Aurligram}{\gh}.
@@ -128,6 +133,7 @@
     \item[Hexagonal Rust] Rust {\sc{api rest}} starter kit using hexagonal architecture \href{https://github.com/antondc/rust-api-rest-starter-kit}{\gh}.
   \end{cvlist}
   \cvplace{}
+  \vspace{1em}
   \date{\today}
 \end{cv}
 \end{document}
