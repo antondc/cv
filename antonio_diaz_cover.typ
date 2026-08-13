@@ -22,7 +22,7 @@
 #align(right)[#datetime.today().display("[month repr:long] [day], [year]")]
 #v(1.5em)
 
-Senior full-stack engineer with 10+ years of experience on frontend using #link("https://www.typescriptlang.org")[TypeScript] and #link("https://reactjs.org/")[React], and on backend with #link("https://nodejs.org")[Node.js], plus #link("https://www.rust-lang.org")[Rust] and #link("https://go.dev")[Go].
+Senior full-stack engineer with 10+ years of experience on frontend using #link("https://www.typescriptlang.org")[TypeScript] and #link("https://reactjs.org/")[React], and on backend with #link("https://nodejs.org")[Node.js], #link("https://www.rust-lang.org")[Rust] and #link("https://go.dev")[Go].
 
 Since 2015 I have been working on full stack roles related to web software development with multinational teams across wide time zones. Some of the sites I have worked on include the streaming service _#link("https://www.movistarplus.es/")[Movistar Plus+]_, the ecommerce site based in Los Angeles _#link("https://www.thrivemarket.com")[Thrive Market]_ or the site for the design studio _#link("https://linii.group")[Linii]_.
 
