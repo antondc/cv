@@ -6,7 +6,7 @@
 // Text content and tone carried over unchanged from antonio_diaz_cover.tex.
 
 #set document(
-  title: "Antonio Díaz — Cover Letter",
+  title: "Antonio Díaz Cover Letter",
   author: "Antonio Díaz",
 )
 
@@ -20,24 +20,22 @@
 #align(left)[
   #smallcaps[#text(size: 24pt)[Antonio Díaz]]
 
-  #text(size: 12.5pt, style: "italic")[Software developer]
-
-  #smallcaps[#link("https://www.typescriptlang.org")[TypeScript] + #link("https://www.rust-lang.org")[Rust]]
+  #text(size: 12.5pt, style: "italic")[Senior Full Stack Engineer]
 ]
 
 #v(0.5em)
 #align(right)[#datetime.today().display("[month repr:long] [day], [year]")]
 #v(1.5em)
 
-Software developer with 9+ years of experience on frontend using #link("https://www.typescriptlang.org")[TypeScript] and #link("https://reactjs.org/")[React], and on backend with #link("https://nodejs.org")[NodeJS], #link("https://www.rust-lang.org")[Rust] and #link("https://go.dev")[Golang].
+Senior full-stack engineer with 9+ years of experience on frontend using #link("https://www.typescriptlang.org")[TypeScript] and #link("https://reactjs.org/")[React], and on backend with #link("https://nodejs.org")[Node.js], plus #link("https://www.rust-lang.org")[Rust] and #link("https://go.dev")[Go] on smaller projects.
 
 Since 2015 I have been working on full stack roles related to web software development with multinational teams across wide time zones. Some of the sites I have worked on include the multinational streaming platform from #link("https://www.telefonica.es/")[Telefónica] #link("https://www.movistarplus.es/")[Movistar Plus+], the ecommerce site based in Los Angeles _#link("https://www.thrivemarket.com")[Thrive Market]_ or the site for the design studio _#link("https://linii.ru/en")[Linii]_.
 
-In 2012 I co-founded _#link("https://www.diazpons.es")[Díaz #sym.amp Pons]_, publishing house focused on digital and printed editions, where we edited high quality non-fiction books on art and social sciences. There I directed content and personally designed every book's interior — typography, layout, and composition — which gave me a strong eye for visual detail and design language.
+In 2012 I co-founded _#link("https://www.diazpons.es")[Díaz #sym.amp Pons]_, publishing house focused on digital and printed editions, where we edited high quality non-fiction books on art and social sciences. There I directed content and personally designed every book's interior: typography, layout, and composition, which gave me a strong eye for visual detail and design language.
 
-Recently I have been integrating a multilingual international streaming service with 1M+ concurrent plays into the main streaming platform #link("https://www.movistarplus.es/")[Movistar Plus+]. This has involved a complete redesign of the platform, merging the frontend logic of both services, dealing with scale and security challenges, refining product details, and coordinating across engineering, design, and product teams to solve problems that cut across organizational boundaries.
+Recently I have been integrating a multilingual international streaming service with several million concurrent plays into the main streaming platform #link("https://www.movistarplus.es/")[Movistar Plus+]. This has involved a complete redesign of the platform, merging the frontend logic of both services, dealing with scale and security challenges, refining product details, and coordinating across engineering, design, and product teams to solve problems that cut across organizational boundaries.
 
-I am open to roles related to web software development with #link("https://www.typescriptlang.org")[TypeScript] or #link("https://www.rust-lang.org")[Rust]. You can find more information at my site _#link("https://antoniodiaz.me")[www.antoniodiaz.me]_, in my _#link("https://www.git.antoniodiaz.me/antoniodcorrea/")[GitLab]_ | _#link("https://github.com/antondc")[GitHub]_, or by writing to _#link("mailto:hello@antoniodiaz.me")[hello\@antoniodiaz.me]_.
+I am open to roles related to web software development with #link("https://www.typescriptlang.org")[TypeScript] or #link("https://reactjs.org/")[React]. You can find more information at my site _#link("https://antoniodiaz.me")[www.antoniodiaz.me]_, in my _#link("https://www.git.antoniodiaz.me/antoniodcorrea/")[GitLab]_ | _#link("https://github.com/antoniodcorrea")[GitHub]_ | _#link("https://www.linkedin.com/in/antonio-d%C3%ADaz-correa-b9487828/")[LinkedIn]_, or by writing to _#link("mailto:hello@antoniodiaz.me")[hello\@antoniodiaz.me]_.
 
 #v(1.5em)
 Antonio Díaz
