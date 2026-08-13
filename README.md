@@ -1,28 +1,38 @@
 # CV Antonio Díaz Correa
 
-CV composed with [Typst](https://typst.app) — chosen because it produces a
-tagged PDF (with PDF/UA-1 conformance available) by default, so the text
-layer parses correctly in ATS systems, LLM ingestion pipelines, and
-screen readers. The prior LaTeX version's small-caps and icon glyphs
-extracted as garbled/unreadable text.
+CV composed with [Typst](https://typst.app), producing a tagged PDF (with
+PDF/UA-1 conformance available) by default, so the text layer parses
+correctly in ATS systems, LLM ingestion pipelines, and screen readers.
 
-## Build instructions
+## Installation
 
-Requires the `typst` CLI (`brew install typst`).
+Requires the `typst` CLI and `make`.
 
 ```bash
-typst compile antonio_diaz_cv.typ antonio_diaz_cv.pdf --pdf-standard ua-1
+brew install typst
 ```
 
-The `--pdf-standard ua-1` flag enforces PDF/UA-1 accessibility
-conformance at compile time — the build fails with a diagnostic instead
-of silently producing a non-conformant PDF.
+`make` ships with Xcode Command Line Tools on macOS and with most Linux
+distributions. For other platforms, see the
+[Typst installation docs](https://github.com/typst/typst#installation).
+
+## Build
+
+```bash
+make
+```
+
+Every build enforces PDF/UA-1 accessibility conformance
+(`--pdf-standard ua-1`); it fails with a diagnostic instead of silently
+producing a non-conformant PDF.
+
+## Live preview while editing
+
+```bash
+make watch
+```
 
 ## Cover letter
 
-Same toolchain, same font (EB Garamond), different layout — a letter, not
+Same toolchain, same font (EB Garamond), different layout: a letter, not
 a CV, so no label-column grids.
-
-```bash
-typst compile antonio_diaz_cover.typ antonio_diaz_cover.pdf --pdf-standard ua-1
-```

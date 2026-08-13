@@ -1,58 +1,4 @@
-// Antonio Díaz — CV
-// Built on the "yuan-resume" Typst Universe package:
-// https://typst.app/universe/package/yuan-resume
-// https://github.com/visika/yuan-resume
-//
-// MIT License, Copyright (c) 2024 Haofeng Yuan. The five functions below
-// (section-block, edu-heading, proj-heading, intern-heading, award) are
-// copied verbatim from that package's functions.typ, with two changes:
-//
-// 1. Font: section-block() hardcoded "Cronos Pro" for section titles, a
-//    commercial font that's neither installed on this machine nor bundled
-//    with Typst (confirmed: a `show text.where(font: "Cronos Pro")`
-//    override does not intercept a font set directly on a `text()` call,
-//    so vendoring was the reliable fix). The upstream template's body font
-//    is likewise the commercial "Sabon LT Std" — neither that nor Cronos
-//    Pro shipped as actual font files in the package (Typst Universe
-//    strips non-redistributable fonts), and this machine only had a
-//    Microsoft Word font-preview thumbnail for "Sabon Next LT", not an
-//    installed, usable font. Substituted EB Garamond throughout: it's the
-//    open-source (SIL OFL) modern digitization of the same Garamond
-//    lineage Sabon was itself redrawn from, so it sits close to the
-//    original in spirit while being freely redistributable. Fetched the
-//    variable-weight release from Google Fonts' official repository
-//    (fonts.google.com/specimen/EB+Garamond) — the Homebrew cask
-//    `font-eb-garamond` turned out to be an older cut with no bold weight.
-//
-// 2. Semantics: section titles were plain styled text inside a grid cell,
-//    not real headings — no PDF outline entries, and the extracted text
-//    ran the title straight into the section's first sentence with no
-//    break ("Summary Software developer..."). They're now wrapped in
-//    #heading(level: 1), with a show rule directly below that renders
-//    them identically to before (same grid position, same smallcaps/size)
-//    while restoring bookmarks and a real paragraph break in extracted
-//    text.
-//
-// 3. Baseline: grid cells align by the top of their box, not by text
-//    baseline, so the 14.5pt heading and the 10pt body text next to it
-//    didn't sit on the same line even though both start flush at the row's
-//    top edge — bigger font, bigger ascent, lower baseline. Measured the
-//    gap by rendering both at actual size and finding the bottom pixel row
-//    of a non-descender glyph on each side (E of a heading, T of the first
-//    word beside it): 11px at 300 ppi, i.e. 2.64pt. A -2.64pt top inset on
-//    the heading box cancels it — but only *sometimes*: the same code,
-//    same fonts, same content re-tested in isolation lands within 1-2px
-//    everywhere except one section (Languages), which was off by 9px in
-//    the real document and only 1px in an isolated repro with identical
-//    content. Forcing that section to the top of a fresh page (temporary
-//    #pagebreak() while debugging) also fixed it — so it's Typst
-//    accumulating a rounding difference from whatever sits above a
-//    section on the page, not this code. Rather than chase that further,
-//    title-offset lets each section-block call correct for its own
-//    measured drift; see the per-call values below, each checked against
-//    a fresh 300 ppi render (target: 0px, i.e. the heading's and the
-//    first line of content's non-descender glyphs bottom out on the same
-//    pixel row).
+// Antonio Díaz CV
 
 #let section-block(title, content, title-offset: -2.64pt, title-align: left) = [
   #grid(
@@ -128,39 +74,19 @@
 
 #set page(paper: "a4", margin: (top: 1.8cm, bottom: 1.8cm, left: 2.2cm, right: 2.2cm))
 
-// Old-style (text) figures instead of lining figures, matching the
-// original template's numerals — EB Garamond ships both via OpenType,
-// lining is just the default.
 #set text(font: "EB Garamond", size: 12pt, lang: "en", region: "us", hyphenate: false, kerning: false, number-type: "old-style")
 #set par(justify: true, leading: 0.6em)
 
-// Reproduces section-block()'s original look (no bold, no numbering, no
-// extra block spacing) so promoting titles to real headings is a
-// semantic-only change.
 #show heading.where(level: 1): it => text(size: 14.5pt, weight: "regular", it.body)
 
-// More breathing room before bullet lists — plain block(above:) on the
-// list element had no visible effect (its default spacing collapses
-// against the preceding paragraph's), so this prepends explicit space.
 #show list: it => {
   v(3pt, weak: false)
   it
 }
 
-// Non-breaking hyphen: keeps a compound proper noun from being split
-// at the hyphen across a line break.
+// non-breaking hyphen, so names don't split across lines
 #let nbh = "‑"
 
-// Small caps for text that's already all-uppercase in its correct casing
-// (acronyms, initialisms). Plain smallcaps() only shrinks lowercase
-// letters via the smcp OpenType feature and leaves existing uppercase
-// alone — on "FON" that's a no-op, indistinguishable from setting no
-// style at all. `all: true` additionally applies c2sc, shrinking the
-// already-uppercase letters too, which is what actually produces a
-// visible small-caps look here. For mixed-case proper nouns (Telefónica,
-// Thrive Market...) plain smallcaps() is used directly instead, since the
-// leading capital should stay full height — matching how the original
-// LaTeX (small caps applied to a lowercase-typed word) rendered them.
 #let sc(body) = smallcaps(all: true, body)
 
 #grid(
@@ -173,10 +99,10 @@
   ],
   [
     (+34) 671 156 605 \
-    #link("mailto:hello@antoniodiaz.me")[hello\@antoniodiaz.me] \
-    #link("https://antoniodiaz.me")[www.antoniodiaz.me] \
-    #link("https://www.github.com/antoniodcorrea")[github/antoniodcorrea] \
-    #link("https://www.linkedin.com/in/antonio-d%C3%ADaz-correa-b9487828/")[Linkedin]
+    #emph(link("mailto:hello@antoniodiaz.me")[hello\@antoniodiaz.me]) \
+    #emph(link("https://antoniodiaz.me")[www.antoniodiaz.me]) \
+    #emph(link("https://www.github.com/antoniodcorrea")[github/antoniodcorrea]) \
+    #emph(link("https://www.linkedin.com/in/antonio-d%C3%ADaz-correa-b9487828/")[LinkedIn])
   ],
 )
 
@@ -267,13 +193,7 @@
   title-offset: -3pt,
   title-align: right,
   [
-    // terms()'s default hanging-indent is a fixed constant, not the width
-    // of the actual term label — it only happens to match longer labels
-    // like "Architecture". "Design" (the one entry that wraps) is short
-    // enough that the default left its second line short of "Component-
-    // Driven Design"'s start. 37.82pt is strong[Design]'s measured width
-    // (34.85pt) plus the ": " separator's (2.98pt), so the wrap lands
-    // under the actual text instead.
+    // fixed indent so the wrapped line under "Design" lines up
     #set terms(separator: [: ], hanging-indent: 37.82pt)
     / Languages: TypeScript, JavaScript, #link("https://www.rust-lang.org/")[Rust], #link("https://go.dev/")[Go], #sc[SQL].
     / Frontend: React, #link("https://nextjs.org/")[Next.js], #link("https://graphql.org/")[#sc[G]raph#sc[QL]], #link("https://www.framer.com/motion/")[Framer Motion].
