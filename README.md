@@ -1,41 +1,28 @@
 # CV Antonio Díaz Correa
 
-CV composed with LaTeX
-
-## Required TeX Live packages
-
-The following packages are required beyond the TeX Live core collections.
-
-### Install command
-
-```bash
-tlmgr install \
-  currvita \
-  cfr-lm \
-  nfssext \
-  enumitem \
-  xcolor \
-  eso-pic \
-  textcase \
-  etoolbox \
-  xkeyval \
-  regexpatch \
-  babel \
-  epstopdf-base \
-  fontawesome5 \
-  microtype
-```
+CV composed with [Typst](https://typst.app) — chosen because it produces a
+tagged PDF (with PDF/UA-1 conformance available) by default, so the text
+layer parses correctly in ATS systems, LLM ingestion pipelines, and
+screen readers. The prior LaTeX version's small-caps and icon glyphs
+extracted as garbled/unreadable text.
 
 ## Build instructions
 
-From the project root:
+Requires the `typst` CLI (`brew install typst`).
 
 ```bash
-latexmk -pdf cv.tex
+typst compile antonio_diaz_cv.typ antonio_diaz_cv.pdf --pdf-standard ua-1
 ```
 
-To clean build artifacts:
+The `--pdf-standard ua-1` flag enforces PDF/UA-1 accessibility
+conformance at compile time — the build fails with a diagnostic instead
+of silently producing a non-conformant PDF.
+
+## Cover letter
+
+Same toolchain, same font (EB Garamond), different layout — a letter, not
+a CV, so no label-column grids.
 
 ```bash
-latexmk -C
+typst compile antonio_diaz_cover.typ antonio_diaz_cover.pdf --pdf-standard ua-1
 ```

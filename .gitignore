@@ -1,8 +1,2 @@
-*latexindent*
-*.aux
-*.log
-*.out
-*.fls
-*.synctex.*
-*latexmk
+.DS_Store
 .*aude
