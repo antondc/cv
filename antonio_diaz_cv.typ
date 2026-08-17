@@ -12,15 +12,17 @@
 
 #let edu-heading(department: [], location: [], role: [], time: []) = [
   #set par(justify: false)
-  #grid(
-    columns: (3fr, 1fr),
-    align: (left, right),
-    [
-      #strong(department)
-      #if location != [] [
-        | #location]],
-    time,
-  )
+  #block(below: 8pt)[
+    #grid(
+      columns: (3fr, 1fr),
+      align: (left, right),
+      [
+        #strong(department)
+        #if location != [] [
+          | #location]],
+      time,
+    )
+  ]
   #if role != [] [
     #emph(role)
   ]
@@ -40,7 +42,7 @@
   )
 ]
 
-#let intern-heading(company: [], location: [], time: []) = [
+#let intern-heading(company: [], location: [], time: []) = block(below: 10pt)[
   #set par(justify: false)
   #grid(
     columns: (3fr, 1fr),
@@ -115,7 +117,7 @@
   [
     Senior full-stack engineer with experience shipping high-traffic
     streaming and e‑commerce platforms.
-    Background directing design and production for 20+ editorial
+    Background as publisher directing design and production for editorial
     projects, from typography and layout to printing and distribution,
     applied to design systems and #sc[ui] architecture. Currently based in
     Madrid, Spain.
@@ -138,7 +140,6 @@
     - Led cross-team efforts to find and solve hard-to-reproduce bugs, often requiring investigation beyond the team's own systems.
     - Currently migrating the Movistar Plus+ international web service (10+ countries) into a new platform, working transversally across engineering, design, and product teams on a complete redesign and merging both platforms' business logic.
 
-    #v(8pt)
     #intern-heading(company: [#link("https://thrivemarket.com/")[#smallcaps[Thrive Market]]/#link("https://distillery.com")[#smallcaps[Distillery]]], location: [Moscow (#sc[RU]) -- #sc[l.a.] (#sc[US])], time: [2019 -- 2022])
     Full stack developer. #emph(link("https://thrivemarket.com")[www.thrivemarket.com]): e‑commerce competing with Amazon Fresh in the #sc[US] market. \
     _Stack_: TypeScript, React, Cypress, Rust.
@@ -148,20 +149,17 @@
     - #sc[A/B] testing and experimentation with Amplitude.
     - Managed cleanup, shutdown, and replacement of legacy sites and endpoints, including infrastructure and redirections.
 
-    #v(8pt)
+#block(breakable: false)[
     #intern-heading(company: [#link("https://astroshock.ru")[#smallcaps[Astroshock]]], location: [Moscow (#sc[RU])], time: [2017 -- 2019])
     Full stack developer. _Stack_: React, Backbone, Django (Python). Development of web client, back office for content management, and #sc[API]. \
     #emph(link("https://mosbrew.ru")[www.mosbrew.ru]), #emph(link("https://u.university/")[ww.u.university]), #emph(link("https://linii.group")[www.linii.group]).
-
-    #v(8pt)
+]
     #intern-heading(company: [#smallcaps[Critik]], location: [Madrid (#sc[ES])], time: [2015 -- 2016])
-    Founder and developer. Project management and data import from the #link("https://www.bne.es/")[#sc[BNE]] using #link("https://www.w3.org/TR/rdf-sparql-query/")[#sc[SPARQL]] and #link("https://www.mysql.com/")[#sc[M]y#sc[SQL]].
+    Founder and developer. Online book review platform. Led product vision and development. Built data pipeline built data pipeline against the Biblioteca Nacional de España (BNE) linked open data catalog via #link("https://www.w3.org/TR/rdf-sparql-query/")[#sc[SPARQL]] and #link("https://www.mysql.com/")[#sc[M]y#sc[SQL]]..
 
-    #v(8pt)
     #intern-heading(company: [#link("https://www.diazpons.es")[#smallcaps[Díaz \& Pons]]], location: [Madrid (#sc[ES])], time: [2012 -- 2015])
-    Founder and editor. Directed overlapping design and production workflows across 20+ projects, coordinating authors, printers, and distributors. #emph(link("https://www.diazpons.es")[www.diazpons.es]).
+    Founder and editor. Publishing house focused on non-fiction. Directed overlapping design and production workflows across 20+ projects, coordinating authors, printers, and distributors. #emph(link("https://www.diazpons.es")[www.diazpons.es]).
 
-    #v(8pt)
     #intern-heading(company: [#smallcaps[Freelance]], location: [Madrid (#sc[ES])], time: [2007 -- 2011])
     Project manager at #link("https://cgac.xunta.gal/")[#sc[CGAC]] and Medialab-Prado (currently #link("https://www.medialab-matadero.es/")[Matadero#(nbh)Medialab]).
   ],
@@ -178,7 +176,6 @@
       role: [Master's Degree in Project Management],
       time: [2007],
     )
-    #v(8pt)
     #edu-heading(
       department: [#link("https://www.usc.gal")[#sc[USC]]],
       location: [Santiago de Compostela, Spain],
@@ -222,10 +219,8 @@
   title-offset: -3pt,
   title-align: right,
   [
-    #proj-heading(title: [Urligram], institution: [Web client, #sc[API], and browser extensions for #link("https://www.urligram.com")[urligram.com]. Stack: Go, Rust and TypeScript.], time: [])
-    #v(8pt)
+    #proj-heading(title: [Urligram], institution: [Web client, #sc[API], and browser extensions for . Stack: Go, Rust and TypeScript.], time: [])
     #proj-heading(title: [Transducers], institution: [#link("https://www.antoniodiaz.me/en/blog/functional-javascript-transducers-14")[Functional programming series] at #link("https://antoniodiaz.me")[antoniodiaz.me].], time: [])
-    #v(8pt)
     #proj-heading(title: [Hexagonal Rust], institution: [#link("https://github.com/antoniodcorrea/rust-api-rest-starter-kit")[Rust #sc[API] #sc[REST] starter kit] using hexagonal architecture.], time: [])
   ],
 )
@@ -235,7 +230,7 @@
   title-offset: -2.88pt,
   title-align: right,
   [
-    Gliding: #sc[SPL] (Sailplane Pilot Licence), based at Fuentemilanos, Spain. \
+    #link("https://glidingunion.eu")[Gliding: #sc[SPL] (Sailplane Pilot Licence)], based at Fuentemilanos, Spain. \
     Reading: narrative nonfiction on history of technology, geography, and art.
   ],
 )
