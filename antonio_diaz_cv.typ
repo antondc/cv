@@ -38,7 +38,7 @@
       strong(title),
     ),
     row-gutter: 8pt,
-    emph(institution), time,
+    institution, time,
   )
 ]
 
@@ -195,10 +195,10 @@
     / Languages: TypeScript, JavaScript, #link("https://www.rust-lang.org/")[Rust], #link("https://go.dev/")[Go], #sc[SQL].
     / Frontend: React, #link("https://nextjs.org/")[Next.js], #link("https://graphql.org/")[#sc[G]raph#sc[QL]], #link("https://www.framer.com/motion/")[Framer Motion].
     / Backend: Node.js, #link("https://www.postgresql.org/")[#sc[P]ostgre#sc[SQL]].
-    / Architecture: #sc[DDD], Hexagonal, #sc[REST].
-    / Design: Component-Driven Design, #link("https://atomicdesign.bradfrost.com/")[Atomic Design], #link("https://m3.material.io/foundations/design-tokens/overview")[Design Tokens], Material Design, Grid Systems.
+    / Architecture: Domain Driven Design, Hexagonal, #sc[REST].
+    / Design: Component-Driven, #link("https://atomicdesign.bradfrost.com/")[Atomic], #link("https://m3.material.io/foundations/design-tokens/overview")[Tokens] and Material Design, Grid Systems.
     / Testing: Jest, #link("https://www.cypress.io/")[Cypress], #link("https://amplitude.com/")[Amplitude] (#sc[A/B]).
-    / Tools: Git, GitLab, #sc[GitHub] Actions, Jenkins, Docker, OpenShift.
+    / Tools: Git, GitLab, #sc[GitHub] Actions, Jenkins, Docker.
   ],
 )
 
@@ -219,9 +219,9 @@
   title-offset: -3pt,
   title-align: right,
   [
-    #proj-heading(title: [Urligram], institution: [Web client, #sc[API], and browser extensions for . Stack: Go, Rust and TypeScript.], time: [])
-    #proj-heading(title: [Transducers], institution: [#link("https://www.antoniodiaz.me/en/blog/functional-javascript-transducers-14")[Functional programming series] at #link("https://antoniodiaz.me")[antoniodiaz.me].], time: [])
-    #proj-heading(title: [Hexagonal Rust], institution: [#link("https://github.com/antoniodcorrea/rust-api-rest-starter-kit")[Rust #sc[API] #sc[REST] starter kit] using hexagonal architecture.], time: [])
+    #proj-heading(title: [Urligram], institution: [Bookmark and #sc[rss] manager. Web client, #sc[API], and browser extensions. Written in Go, Rust and TypeScript.\ #emph(link("https://www.urligram.com")[www.urligram.com]).], time: [])
+    #proj-heading(title: [Transducers], institution:  [Functional programming series at #emph(link("https://www.antoniodiaz.me/blog/functional-javascript-transducers-14")[antoniodiaz.me]).], time: [])
+    #proj-heading(title: [Hexagonal Rust], institution: [Rust #sc[REST] starter kit using hexagonal architecture. #emph(link("https://github.com/antoniodcorrea/rust-api-rest-starter-kit")[github.com]).], time: [])
   ],
 )
 
@@ -230,7 +230,7 @@
   title-offset: -2.88pt,
   title-align: right,
   [
-    #link("https://glidingunion.eu")[Gliding: #sc[SPL] (Sailplane Pilot Licence)], based at Fuentemilanos, Spain. \
+    #link("https://glidingunion.eu")[Gliding: #sc[SPL] (Sailplane Pilot Licence)], based at Fuentemilanos aerodrome, Spain. \
     Reading: narrative nonfiction on history of technology, geography, and art.
   ],
 )
